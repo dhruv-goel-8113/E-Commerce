@@ -3,7 +3,7 @@ import {Item} from './Item.jsx'
 export const Popular = () => {
   const [popular_product,setPopular_product]=useState([]);
   useEffect(()=>{
-    fetch("http://localhost:4000/popular").then((response)=>response.json()).then((data)=>setPopular_product(data));
+    fetch(`${process.env.VITE_API_BASE_URL}/popular`).then((response)=>response.json()).then((data)=>setPopular_product(data));
   },[])
   return (
     <section className='bg-primary'>

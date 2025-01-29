@@ -7,7 +7,7 @@ export const ListProduct = () => {
   const [productToDelete, setProductToDelete] = useState(null);
 
   const fetchInfo = async () => {
-    await fetch('http://localhost:4000/allproducts')
+    await fetch(`${process.env.VITE_API_BASE_URL}/allproducts`)
       .then((res) => res.json())
       .then((data) => {
         setAllproducts(data);
@@ -24,7 +24,7 @@ export const ListProduct = () => {
   };
 
   const remove_product = async () => {
-    await fetch('http://localhost:4000/removeproduct', {
+    await fetch(`${process.env.VITE_API_BASE_URL}/removeproduct`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

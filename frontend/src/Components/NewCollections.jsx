@@ -4,7 +4,7 @@ export const NewCollections = () => {
   const [new_collection,setNew_collection]=useState([]);
 
   useEffect(()=>{
-    fetch("http://localhost:4000/newcollection").then((response)=>response.json()).then((data)=>setNew_collection(data));
+    fetch(`${process.env.VITE_API_BASE_URL}/newcollection`).then((response)=>response.json()).then((data)=>setNew_collection(data));
   },[])
   return (
     <section className='bg-primary'>

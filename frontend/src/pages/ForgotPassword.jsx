@@ -23,7 +23,7 @@ export const ForgotPassword = () => {
   const submitDetails = async () => {
     if (email && dob) {
       let responseData;
-      await fetch('http://localhost:4000/forgot', {
+      await fetch(`${process.env.VITE_API_BASE_URL}/forgot`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -50,7 +50,7 @@ export const ForgotPassword = () => {
   const updatePassword = async () => {
     if (newPassword) {
       let responseData;
-      await fetch('http://localhost:4000/updatePassword', {
+      await fetch(`${process.env.VITE_API_BASE_URL}/updatePassword`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',

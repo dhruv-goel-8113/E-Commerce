@@ -69,7 +69,7 @@ export const Login = () => {
     }
 
     let responseData;
-    await fetch('http://localhost:4000/login', {
+    await fetch(`${process.env.VITE_API_BASE_URL}/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -103,7 +103,7 @@ export const Login = () => {
     }
 
     let responseData;
-    await fetch('http://localhost:4000/signup', {
+    await fetch(`${process.env.VITE_API_BASE_URL}/signup`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
